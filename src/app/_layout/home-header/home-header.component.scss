@@ -1,0 +1,35 @@
+.header-top {
+    background: #3a4855;
+    padding-top: 20px;
+    color: #fff;
+    h2 {
+        font-family:'LatoWebhairline';
+        span {
+            font-family:'LatoWebRegular';
+        }
+    }
+    p {
+        color: lighten(#3a4855, 30%);
+    }
+    .products-links {
+        max-width:600px;
+        margin: 40px auto 5px auto;
+        padding: 0px;
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin-left: 8px;
+            margin-right: 8px;
+            a {
+                color: #fff;
+                padding:8px;
+                min-width: 90px;
+                font-size: 18px;
+                display: inline-block;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

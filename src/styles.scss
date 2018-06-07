@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+$fa-font-path : '../node_modules/font-awesome/fonts';
+@import '../node_modules/font-awesome/scss/font-awesome';
+@import 'assets/sass/mixins';
+@import 'assets/sass/variables';
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding-top: 30px;
+    font-family: 'LatoWeblight' !important;
+}
+
+h1 {
+    display: none;
+}
+h2, h3, h4, h5 {
+    font-weight: normal;
+}
+
+.navbar {
+    background: $theme;
+    .navbar-brand img {
+        height: 38px;
+    }
+    .navbar-nav .nav-item {
+        margin-top: -5px;
+        a {
+            color: #fff;
+            font-family: 'LatoWeblight';
+            .fa {
+                color: $logo-red;
+                margin-right: 4px;
+            }
+        }
+        p {
+            color: #fff;
+            margin: 7px 10px 0px;
+            font-size: 18px;
+            font-family:'LatoWebRegular';
+            .fa {
+                color: $logo-blue;
+            }
+        }
+    }
+}
+
+.homeform-section {
+    background: $theme url("assets/images/boy.svg") no-repeat 96% bottom/320px;
+    @include padding(10px, null, 20px, null);
+    min-height: 400px;
+    position: relative;
+    .fields-row {
+        background: #fff;
+        @include border-radius(4px);
+        @include box-shadow(0px 3px 6px rgba(0,0,0,0.25));
+        min-height: 50px;
+        max-width: 600px;
+        width: 100%;
+        display: block;
+        margin: 20px auto;
+    }
+    .rg-field-row {
+        @extend .fields-row;
+        max-width: 240px;
+        input {
+            @include border-radius(4px);
+            background:url("assets/images/ind.svg") no-repeat 0px 0px/32px;
+            border: none;
+            padding-top: 4px;
+            padding-left: 32px;
+            text-align: center;
+            font-size: 22px;
+            font-family:'LatoWebRegular';
+            height: 50px;
+            width: 100%;
+        }
+    }
+    .continue-btn {
+        background:lighten($logo-red, 6%);
+        border: 1px solid $logo-red;
+        color: #fff;
+        text-align: center;
+        display: inline-block;
+        @include border-radius(4px);
+        @include box-shadow(0px 3px 6px rgba(0,0,0,0.2));
+        position: absolute;
+        bottom: 150px;
+        left: calc(50% - 85px);
+        padding: 9px;
+        width: 170px;
+        &:focus, &:active {
+            background: darken($logo-red, 8%);
+        }
+    }
+}
