@@ -1,6 +1,9 @@
+@import '../../../assets/sass/mixins';
+@import '../../../assets/sass/variables';
+
 .header-top {
     background: #3a4855;
-    padding-top: 20px;
+    padding-top: 30px;
     color: #fff;
     h2 {
         font-family:'LatoWebhairline';
@@ -20,6 +23,11 @@
             display: inline-block;
             margin-left: 8px;
             margin-right: 8px;
+            &.active {
+                a {
+                    color:$logo-blue;
+                }
+            }
             a {
                 color: #fff;
                 padding:8px;

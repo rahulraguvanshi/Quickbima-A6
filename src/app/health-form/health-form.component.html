@@ -1,22 +1,48 @@
+
 <div class="homeform-section">
     <form #healthform = "ngForm">
         <div class="container">
             <div class="row fields-row">
-                <div class="col-sm-6"><input type="text" class="form-control"></div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" placeholder="Whome to Insure?">
+                </div>
                 <div class="col-sm-3">
-                    <select class="form-control" name="eldestMemberAge">
+                    <select class="ui search dropdown" name="eldestMemberAge" required>
                         <option value="">Age</option>
-                        <option *ngFor="let age of arrayOne(83, 18)" [value]="age">{{age}} Years</option>
+                        <option *ngFor="let age of eldestMembarAge(83, 18)" [value]="age">{{age}} Years</option>
                     </select>
                 </div>
                 <div class="col-sm-3">
-                    <select class="form-control" name="eldestMemberGender">
+                    <select name="eldestMemberGender" required>
                         <option value="">Gender</option>
                         <option *ngFor="let gender of eldestMemberGender" [value]="gender">{{gender}} </option>
                     </select>
                 </div>
-                <a href="" class="continue-btn">Continue</a>
             </div>
+            <div class="row fields-row">
+                <div class="col-sm-6">
+                    <div class="input-effect">
+                        <input class="effect" placeholder="Email" type="text">
+                        <label>Email</label>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="input-effect">
+                        <input class="effect" placeholder="Pincode" type="text">
+                        <label>Pincode</label>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="input-effect">
+                        <input class="effect" placeholder="Mobile" type="text">
+                        <label>Mobile</label>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <a href="" class="continue-btn">Continue</a>

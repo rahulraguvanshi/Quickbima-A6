@@ -5,11 +5,11 @@
         <h2>Insurance Kharidna, <span class="text-uppercase">Ab Bachhon ka khel</span></h2>
         <p>Quickest, Easiest and Cheapest Way to Buy Insurance from 36 Different Insurers</p>
         <ul class="products-links">
-          <li><a routerLink="/">Car</a></li>
-          <li><a routerLink="/healthinsurance">Health</a></li>
-          <li><a routerLink="/twowhellerinsurance">Bike</a></li>
-          <li><a routerLink="/terminsurance">Term</a></li>
-          <li><a routerLink="/travelinsurance">Travel</a></li>
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Car</a></li>
+          <li routerLinkActive="active"><a routerLink="/healthinsurance">Health</a></li>
+          <li routerLinkActive="active"><a routerLink="/twowhellerinsurance">Bike</a></li>
+          <li routerLinkActive="active"><a routerLink="/terminsurance">Term</a></li>
+          <li routerLinkActive="active"><a routerLink="/travelinsurance">Travel</a></li>
         </ul>
       </div>
     </div>

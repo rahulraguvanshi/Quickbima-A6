@@ -17,6 +17,7 @@
 
  @include font-face("LatoWebHairline", "/assets/fonts/Lato-Hairline");
  @include font-face("LatoWebLight", "/assets/fonts/Lato-Light");
+ @include font-face("LatoWebThin", "/assets/fonts/Lato-Thin");
  @include font-face("LatoWebMedium", "/assets/fonts/Lato-Medium");
  @include font-face("LatoWebRegular", "/assets/fonts/Lato-Regular");
  @include font-face("LatoWebHeavy", "/assets/fonts/Lato-Heavy");
@@ -53,6 +54,13 @@ input, textarea {
   margin-right: $right;
   margin-bottom: $bottom;
   margin-left: $left;
+}
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
 }
 
 // Define vertical, horizontal, or both position
