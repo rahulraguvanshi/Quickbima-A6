@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HealthFormComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
+
+  // Eldest member's Age Dropdown.
+  arrayOne(n: number, startFrom: number): number[] {
+    return Array.from(Array(n).keys()).map(i => i + startFrom);
+  }
+  // Eldest member's Gender.
+  public eldestMemberGender = [ 
+    "Male",
+    "Female"
+  ];
 
   ngOnInit() {
   }

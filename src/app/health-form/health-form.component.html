@@ -1,13 +1,25 @@
 <div class="homeform-section">
+    <form #healthform = "ngForm">
         <div class="container">
-            <div class="row">
-                <div class="fields-row">
-                    <div class="col-sm-6"></div>
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-2"></div>
+            <div class="row fields-row">
+                <div class="col-sm-6"><input type="text" class="form-control"></div>
+                <div class="col-sm-3">
+                    <select class="form-control" name="eldestMemberAge">
+                        <option value="">Age</option>
+                        <option *ngFor="let age of arrayOne(83, 18)" [value]="age">{{age}} Years</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control" name="eldestMemberGender">
+                        <option value="">Gender</option>
+                        <option *ngFor="let gender of eldestMemberGender" [value]="gender">{{gender}} </option>
+                    </select>
                 </div>
                 <a href="" class="continue-btn">Continue</a>
             </div>
         </div>
+
+        <a href="" class="continue-btn">Continue</a>
+    </form>
     </div>
     <app-home-content></app-home-content>

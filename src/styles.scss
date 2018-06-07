@@ -20,6 +20,9 @@ h2, h3, h4, h5 {
 
 .navbar {
     background: $theme;
+    .container {
+        max-width: 1400px;
+    }
     .navbar-brand img {
         height: 38px;
     }
@@ -46,7 +49,7 @@ h2, h3, h4, h5 {
 }
 
 .homeform-section {
-    background: $theme url("assets/images/boy.svg") no-repeat 96% bottom/320px;
+    background: $theme url("assets/images/boy.svg") no-repeat 96% bottom/330px;
     @include padding(10px, null, 20px, null);
     min-height: 400px;
     position: relative;
@@ -57,8 +60,10 @@ h2, h3, h4, h5 {
         min-height: 50px;
         max-width: 600px;
         width: 100%;
-        display: block;
         margin: 20px auto;
+        [class*="col-"] {
+            padding: 0px;;
+        }
     }
     .rg-field-row {
         @extend .fields-row;
@@ -91,6 +96,154 @@ h2, h3, h4, h5 {
         width: 170px;
         &:focus, &:active {
             background: darken($logo-red, 8%);
+        }
+    }
+}
+
+.main-footer {
+    background:$theme;
+    padding-top: 30px;
+    min-height: 200px;
+    .container {
+        max-width: 1400px;
+    }
+    .disclaimer {
+        font-size: 9px;
+        color: #949fa9;
+    }
+    .copright p {
+        color: #fff;
+        font-size: 13px;
+        font-family: 'Comfortaa';
+        border-top: 1px solid darken($theme, 4%);
+        margin-top: 15px;
+        padding-top: 12px;
+        padding-bottom: 5px;
+        a {
+            color: #fff;
+        }
+    }
+    .top-part {
+        border-bottom: 1px solid darken($theme, 4%);
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        [class*="col-"]{
+            min-height: 106px;
+        }
+        h5 {
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-family: 'Comfortaa';
+            font-weight: 400;
+        }
+        p {
+            font-size: 10px;
+            margin-top: 6px;
+            color: #949fa9;
+            float: left;
+        }
+        a {
+            color: #fff;
+            font-size: 20px;
+            margin-right: 10px;
+            padding: 5px;
+            &:hover {
+                color: $logo-blue;
+            }
+        }
+        .irdai {
+            background: url("assets/images/irda-logo.svg") no-repeat 0px 0px/35px;
+            display: block;
+            height: 60px;
+            width: 60px;
+            float: left;
+        }
+        .security {
+            background: url("assets/images/home-icons.svg") no-repeat 0px -106px/220px;
+            display: block;
+            height: 50px;
+            width: 190px;
+        }
+        .payment {
+            background: url("assets/images/home-icons.svg") no-repeat 0px -50px/220px;
+            display: block;
+            height: 50px;
+            width: 200px;
+            min-height: 50px;
+            padding: 0px;
+        }
+    }
+    .sitelinks {
+        border-bottom: 1px solid darken($theme, 4%);
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        ul {
+            margin: 0px;
+            padding: 0px;
+            float: left;
+            width: 25%;
+            li {
+                color: #fff;
+                font-size: 13px;
+                font-family: 'Comfortaa';
+                font-weight: 400;
+                margin-top: 5px;
+                a {
+                    color: #949fa9;
+                    display: inline-block;
+                    padding: 5px 0px;
+                    font-size: 11px;
+                    font-family: 'robotolight';
+                    &:hover {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .subscribe {
+        background: url("assets/images/subscribe.svg") no-repeat right 6px/167px;
+        position: relative;
+        padding-top: 106px;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        h4 {
+            position: absolute;
+            top: 55px;
+            left:0px;
+            color:#949fa9; 
+            font-size: 16px;
+        }
+        input {
+            background: transparent;
+            border-bottom: 1px solid #212b34;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            color: #949fa9;
+            @include border-radius(0px);
+            font-size: 14px;
+            font-family: 'robotolight';
+            height: 30px;
+            width: calc(100% - 65px);
+        }
+        .btn {
+            background: lighten($logo-red, 6%);
+            border: none;
+            @include border-radius(4px);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 300;
+            font-family: 'Comfortaa';
+            padding: 6px 30px 5px;
+            margin-top: 10px;
+            margin-left: 65px;
+            display: block;
         }
     }
 }
