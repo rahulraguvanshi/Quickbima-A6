@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -24,7 +25,7 @@ import { HomeContentComponent } from './home-content/home-content.component';
 import { CarQuotesComponent } from './car-quotes/car-quotes.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, routing ],
+  imports:      [ BrowserModule, FormsModule, NgSelectModule, routing ],
   declarations: [ 
     AppComponent, 
     HelloComponent, 
