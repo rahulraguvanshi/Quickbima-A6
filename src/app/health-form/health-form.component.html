@@ -1,23 +1,17 @@
 
 
 <div class="homeform-section">
-    <form #healthform = "ngForm">
+    <form method="POST">
         <div class="container">
             <div class="row fields-row">
                 <div class="col-sm-6">
                     <input type="text" class="form-control" placeholder="Whome to Insure?">
                 </div>
                 <div class="col-sm-3">
-                    <select name="eldestMemberAge">
-                        <option value="">Age</option>
-                        <option *ngFor="let age of eldestMembarAge(83, 18)" [value]="age">{{age}} Years</option>
-                    </select>
+                    <ng-select [items]="healthAge" placeholder="Age">{{Years}}</ng-select>
                 </div>
                 <div class="col-sm-3">
-                    <select name="eldestMemberGender">
-                        <option value="">Gender</option>
-                        <option *ngFor="let gender of eldestMemberGender" [value]="gender">{{gender}} </option>
-                    </select>
+                    <ng-select [items]="eldestGender" placeholder="Gender"></ng-select>
                 </div>
             </div>
             <div class="row fields-row">
@@ -46,7 +40,9 @@
 
         </div>
 
-        <a href="" class="continue-btn">Continue</a>
+        <button type="submit" class="continue-btn">Continue</button>
     </form>
     </div>
+
+
     <app-home-content></app-home-content>

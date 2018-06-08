@@ -68,12 +68,31 @@ h2, h3, h4, h5 {
         height: calc(2.25rem + 14px);
         width: 100%;
     }
+    .ng-select {
+        .ng-arrow-wrapper {
+            display: none;
+        }
+        &.ng-select-single .ng-select-container {
+            @extend .form-control;
+            -moz-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            height: calc(2.25rem + 14px);
+            width: 100%;
+            .ng-value-container {
+                padding-top: 3px;
+                .ng-input {
+                    top: 12px;
+                }
+            }
+        }
+    }
     .input-effect {
         position: relative;
         height:50px;
           .effect {
             border:none;
-            @include padding(10px, 7px, 7px, 7px);
+            @include padding(8px, 7px, 7px, 9px);
             border:none;
             background-color: transparent;
             width: 100%;
@@ -124,7 +143,11 @@ h2, h3, h4, h5 {
         width: 100%;
         margin: 20px auto;
         [class*="col-"] {
-            padding: 0px;;
+            padding: 0px;
+            border-right: 1px solid $theme;
+            &:last-child {
+                border: none;
+            }
         }
     }
     .rg-field-row {

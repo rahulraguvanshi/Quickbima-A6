@@ -9,23 +9,29 @@ import * as $ from 'jquery';
 })
 export class HealthFormComponent implements OnInit {
 
+  healthAge = [];
   constructor() {
+    this.getEldestAge();
   }
+  private getEldestAge() {
+    this.healthAge = Array.from({length: 83}, (value, key) => key).map(i => i + 18 + ' Years');
+  }
+  eldestGender = ["Male", "Female"];
 
-  // Eldest member's Age Dropdown.
+  /*
+  forLoopRahul(elements: number): Array<any> {
+    return new Array(elements);
+  }
+  <select><option *ngFor="let item of forLoopRahul(83); let i=index">{{i+18}} Years</option> </select>
+  */
+  /*
   eldestMembarAge(n: number, startFrom: number): number[] {
     return Array.from(Array(n).keys()).map(i => i + startFrom);
   }
-  // Eldest member's Gender.
-  public eldestMemberGender = [ 
-    "Male",
-    "Female"
-  ];
+  <select name="eldestMemberGender"><option *ngFor="let gender of eldestMemberGender" [value]="gender">{{gender}} </option> </select>
+  */
 
   public ngOnInit() {
-    $(function() {
-      $('.ui.dropdown').dropdown();
-    });
 
     $(".input-effect input").focusout(function(){
       if($(this).val() != ""){
