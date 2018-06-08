@@ -5,7 +5,7 @@ import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component
 import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
 import { HomeLayoutComponent } from './_layout/home-layout/home-layout.component';
 
-import { HomeContentComponent } from './home-content/home-content.component';
+
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';

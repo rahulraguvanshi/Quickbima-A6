@@ -21,6 +21,7 @@ import { routing } from './app.routing';
 import { CarFormComponent } from './car-form/car-form.component';
 import { HealthFormComponent } from './health-form/health-form.component';
 import { HomeContentComponent } from './home-content/home-content.component';
+import { CarQuotesComponent } from './car-quotes/car-quotes.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, routing ],
@@ -41,7 +42,8 @@ import { HomeContentComponent } from './home-content/home-content.component';
     HomeHeaderComponent,
     CarFormComponent,
     HealthFormComponent,
-    HomeContentComponent
+    HomeContentComponent,
+    CarQuotesComponent
   ],
   bootstrap:    [ AppComponent ]
 })

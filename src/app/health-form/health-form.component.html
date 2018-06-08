@@ -1,4 +1,5 @@
 
+
 <div class="homeform-section">
     <form #healthform = "ngForm">
         <div class="container">
@@ -7,13 +8,13 @@
                     <input type="text" class="form-control" placeholder="Whome to Insure?">
                 </div>
                 <div class="col-sm-3">
-                    <select class="ui search dropdown" name="eldestMemberAge" required>
+                    <select name="eldestMemberAge">
                         <option value="">Age</option>
                         <option *ngFor="let age of eldestMembarAge(83, 18)" [value]="age">{{age}} Years</option>
                     </select>
                 </div>
                 <div class="col-sm-3">
-                    <select name="eldestMemberGender" required>
+                    <select name="eldestMemberGender">
                         <option value="">Gender</option>
                         <option *ngFor="let gender of eldestMemberGender" [value]="gender">{{gender}} </option>
                     </select>
