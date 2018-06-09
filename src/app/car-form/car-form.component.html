@@ -1,16 +1,33 @@
 <div class="homeform-section">
-    <div class="container">
-        <div class="row">
-            <div class="rg-field-row">
-                <input type="text" class="text-uppercase" placeholder="DL 01 AB 1234">
+    <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div class="row">
+                <div class="rg-field-row">
+                    <input type="text" class="text-uppercase" placeholder="DL 01 AB 1234">
+                </div>
+                <div class="fields-row sr-only">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2"></div>
+                </div>
+                
             </div>
-            <div class="fields-row sr-only">
-                <div class="col-sm-6"></div>
-                <div class="col-sm-2"></div>
-                <div class="col-sm-2"></div>
+            <div class="row fields-row">
+                <div class="col-sm-4">
+                        <ng-select [items]="carMakeModel" placeholder="Make and Model"></ng-select>
+                </div>
+                <div class="col-sm-2">
+                    <ng-select [items]="fuelType" placeholder="Fuel Type"></ng-select>
+                </div>
+                <div class="col-sm-4">
+                    <ng-select [items]="carVariant" placeholder="Variant"></ng-select>
+                </div>
+                <div class="col-sm-2">
+                    
+                </div>
             </div>
-            <a href="" class="continue-btn">Verify Details</a>
+            <button class="btn continue-btn">Continue</button>
         </div>
-    </div>
+    </form>
 </div>
 <app-home-content></app-home-content>

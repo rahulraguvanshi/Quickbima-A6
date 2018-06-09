@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -23,28 +23,30 @@ import { CarFormComponent } from './car-form/car-form.component';
 import { HealthFormComponent } from './health-form/health-form.component';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { CarQuotesComponent } from './car-quotes/car-quotes.component';
+import { HealthQuotesComponent } from './health-quotes/health-quotes.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, NgSelectModule, routing ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, NgSelectModule, routing ],
   declarations: [ 
-    AppComponent, 
-    HelloComponent, 
-    AppLayoutComponent, 
+    AppComponent,
+    HelloComponent,
+    AppLayoutComponent,
     SiteLayoutComponent,
     HomeLayoutComponent,
-    AppHeaderComponent, 
-    SiteHeaderComponent, 
-    SiteFooterComponent, 
-    LoginComponent, 
+    AppHeaderComponent,
+    SiteHeaderComponent,
+    SiteFooterComponent,
+    LoginComponent,
     DashboardComponent,
-    AboutComponent, 
-    RegisterComponent, 
+    AboutComponent,
+    RegisterComponent,
     ProfileComponent,
     HomeHeaderComponent,
     CarFormComponent,
     HealthFormComponent,
     HomeContentComponent,
-    CarQuotesComponent
+    CarQuotesComponent,
+    HealthQuotesComponent
   ],
   bootstrap:    [ AppComponent ]
 })

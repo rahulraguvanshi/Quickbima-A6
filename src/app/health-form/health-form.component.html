@@ -1,14 +1,15 @@
-
-
 <div class="homeform-section">
-    <form method="POST">
+    <form [formGroup]="healthForm" (ngSubmit)="onSubmit()">
         <div class="container">
             <div class="row fields-row">
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" placeholder="Whome to Insure?">
+                    <div class="input-effect">
+                        <input class="effect form-control" type="text">
+                        <label>Whom to Insure?</label>
+                    </div>
                 </div>
                 <div class="col-sm-3">
-                    <ng-select [items]="healthAge" placeholder="Age">{{Years}}</ng-select>
+                    <ng-select [items]="healthAge" bindLabel="name" placeholder="Age">{{Years}}</ng-select>
                 </div>
                 <div class="col-sm-3">
                     <ng-select [items]="eldestGender" placeholder="Gender"></ng-select>
@@ -17,32 +18,41 @@
             <div class="row fields-row">
                 <div class="col-sm-6">
                     <div class="input-effect">
-                        <input class="effect" placeholder="Email" type="text">
+                        <input class="effect form-control" formControlName="email" type="text" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
                         <label>Email</label>
-                        <span class="focus-border"></span>
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is Required.</div>
+                            <div *ngIf="f.email.errors.email">Enter a valid Email Address.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="input-effect">
-                        <input class="effect" placeholder="Pincode" type="text">
+                        <input class="effect form-control" minlength="6" maxlength="6" formControlName="pincode" [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }" type="text">
                         <label>Pincode</label>
-                        <span class="focus-border"></span>
+                        <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                            <div *ngIf="f.pincode.errors.required">Pincode is Required.</div>
+                            <div *ngIf="f.pincode.errors.minlength">Enter 6 digits.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="input-effect">
-                        <input class="effect" placeholder="Mobile" type="text">
+                        <input class="effect form-control" minlength="10" maxlength="10" formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" type="text">
                         <label>Mobile</label>
-                        <span class="focus-border"></span>
+                        <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                            <div *ngIf="f.mobile.errors.required">Mobile is Required.</div>
+                            <div *ngIf="f.mobile.errors.minlength">Enter 10 digits.</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <button type="submit" class="continue-btn">Continue</button>
+        <button class="btn continue-btn">Continue</button>
+
     </form>
     </div>
-
 
     <app-home-content></app-home-content>

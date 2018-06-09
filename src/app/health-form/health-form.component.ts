@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import * as $ from 'jquery';
 
@@ -10,13 +11,52 @@ import * as $ from 'jquery';
 export class HealthFormComponent implements OnInit {
 
   healthAge = [];
-  constructor() {
+  constructor(private healthformBuilder: FormBuilder) {
     this.getEldestAge();
   }
   private getEldestAge() {
-    this.healthAge = Array.from({length: 83}, (value, key) => key).map(i => i + 18 + ' Years');
+    this.healthAge = Array.from({length: 83}, (value, key) => key).map(i => i + 18 + ' years');
   }
-  eldestGender = ["Male", "Female"];
+  eldestGender = [
+    "Male", 
+    "Female"
+  ];
+
+  healthForm: FormGroup;
+  submitted = false;
+
+  ngOnInit() {
+    this.healthForm = this.healthformBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      pincode: ['', [Validators.required, Validators.minLength(6)]],
+      mobile: ['', [Validators.required, Validators.minLength(10)]],
+      age: ['', Validators.required]
+  });
+
+    $(".input-effect input").focusout(function(){
+      if($(this).val() != ""){
+          $(this).addClass("has-content");
+      }else {
+          $(this).removeClass("has-content");
+      }
+    });
+  }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.healthForm.controls; }
+
+  onSubmit() {
+      this.submitted = true;
+      // stop here if form is invalid
+      if (this.healthForm.invalid) {
+          return;
+      }
+
+      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.healthForm.value))
+  }
+
+
+}
 
   /*
   forLoopRahul(elements: number): Array<any> {
@@ -30,16 +70,3 @@ export class HealthFormComponent implements OnInit {
   }
   <select name="eldestMemberGender"><option *ngFor="let gender of eldestMemberGender" [value]="gender">{{gender}} </option> </select>
   */
-
-  public ngOnInit() {
-
-    $(".input-effect input").focusout(function(){
-      if($(this).val() != ""){
-          $(this).addClass("has-content");
-      }else {
-          $(this).removeClass("has-content");
-      }
-    });
-  }
-
-}

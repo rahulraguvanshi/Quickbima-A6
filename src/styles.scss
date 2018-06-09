@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 $fa-font-path : '../node_modules/font-awesome/fonts';
 @import '../node_modules/font-awesome/scss/font-awesome';
-@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
 @import 'assets/sass/mixins';
 @import 'assets/sass/variables';
 
@@ -9,7 +9,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding-top: 30px;
-    font-family: 'LatoWeblight' !important;
+    font-family: 'LatoWeblight'!important;
 }
 
 h1 {
@@ -17,6 +17,11 @@ h1 {
 }
 h2, h3, h4, h5 {
     font-weight: normal;
+}
+
+.form-control.is-invalid:focus, .form-control:focus {
+    border-color: transparent;
+    @include box-shadow(0px 0px 0px 0px rgba(0,0,0,0)!important);
 }
 
 .navbar {
@@ -56,84 +61,125 @@ h2, h3, h4, h5 {
     position: relative;
     .form-control {
         border: none;
-        height: 50px;
-        font-family: 'LatoWebRegular';
+        height: 55px;
+        font-family: 'LatoWebLight';
+        font-weight: 500;
         @include border-radius(5px);
-    }
-    select {
-        @extend .form-control;
-        -moz-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        height: calc(2.25rem + 14px);
-        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
     .ng-select {
+        padding-bottom: 0;
         .ng-arrow-wrapper {
             display: none;
         }
+        .ng-clear-wrapper {
+            top: -10px;
+            width: 25px;
+            padding-left: 6px;
+        }
+        &.ng-select-focused .ng-placeholder, &.ng-select-opened .ng-placeholder, .ng-has-value .ng-placeholder {
+            -webkit-transform: translateY(-0.6em) scale(0.75) perspective(100px) translateZ(0.001px) !important;
+            transform: translateY(-0.6em) scale(0.75) perspective(100px) translateZ(0.001px) !important;
+          }
         &.ng-select-single .ng-select-container {
             @extend .form-control;
             -moz-appearance: none;
             -moz-appearance: none;
             appearance: none;
+            padding-left: 6px;
             height: calc(2.25rem + 14px);
             width: 100%;
+            &:after {
+                border: none;
+            }
+            &.ng-has-value {
+                .ng-value {
+                    margin-top: 10px;
+                    font-family:'LatoWebRegular';
+                    font-size: 15px;
+                }
+            }
             .ng-value-container {
-                padding-top: 3px;
+                padding: 2px 0px;
+                height: 50px;
+                .ng-placeholder {
+                    font-size: 15px;
+                }
                 .ng-input {
-                    top: 12px;
+                    top: 22px;
+                    padding-left: 6px;
                 }
             }
         }
+        .ng-dropdown-panel {
+            &.ng-select-bottom {
+              top: 100%;
+            }
+            .ng-dropdown-panel-items .ng-option {
+              line-height: 2.4em;
+              min-height: 2.4em;
+              font-size: 14px;
+              padding: 0 6px;
+            }
+          }
     }
     .input-effect {
         position: relative;
-        height:50px;
+        height:55px;
           .effect {
             border:none;
-            @include padding(8px, 7px, 7px, 9px);
-            border:none;
+            @include padding(10px, 5px, 5px, 6px);
             background-color: transparent;
             width: 100%;
-            height:50px;
-            color: $theme;
-            font-size:16px;
-            font-family: 'LatoWebRegular';
-            @include border-radius(3px 0px 0px 3px);
+            height: 55px;
+            font-size:15px;
+            @include border-radius(5px);
             @include position (absolute, $left:0px, $top:0px);
-            z-index: 9;
+            z-index: 8;
             ~ label {
               position: absolute;
-              left: 10px;
+              left: 6px;
               width: 100%;
-              top:-22px;
-              font-size:13px;
-              color: $theme;
-              -webkit-transition: top 0.2s linear 0.2s;
-              -moz-transition: top 0.2s linear 0.2s;
-              -o-transition: top 0.2s linear 0.2s;
-              transition: top 0.2s linear 0.2s;
+              top:16px;
+              font-size:15px;
+              color: lighten($theme, 40%);
+              transition: 0.3s;
+              margin: 0px;
+            }
+            &:focus {
+                padding-top: 23px;
+                font-family:'LatoWebRegular';
+                ~ label {
+                    top: 7px;
+                    font-size:11px;
+                    color:$blue-color;
+                    transition: 0.3s;
+                    z-index: 99;
+                }
             }
           }
-          .has-content {
-            @include padding(24px, 0px, 5px, 10px);
-            font-family: 'LatoWebRegular';
+          .has-content.effect {
+            padding-top: 23px;
+            font-family:'LatoWebRegular';
+            ~ label {
+                top: 7px;
+                font-size:11px;
+                color: #777;
+                transition: 0.3s;
+              }
           }
-          .has-content.effect ~ label {
-            top:4px;
-            left: 10px;
-            font-size:13px;
-            font-weight: normal;
-            color: $theme;
-            -webkit-transition: top 0.2s linear 0.2s;
-              -moz-transition: top 0.2s linear 0.2s;
-              -o-transition: top 0.2s linear 0.2s;
-              transition: top 0.2s linear 0.2s;
-            z-index: 999;
+          .invalid-feedback {
+              position: absolute;
+              bottom: 0px;
+              right: 5px;
+              text-align: right;
+              font-size: 11px;
+              font-family:'LatoWebRegular';
           }
       }
-      
+       
     .fields-row {
         background: #fff;
         @include border-radius(4px);
@@ -155,13 +201,13 @@ h2, h3, h4, h5 {
         max-width: 240px;
         input {
             @include border-radius(4px);
-            background:url("assets/images/ind.svg") no-repeat 0px 0px/32px;
+            background:url("assets/images/ind.svg") no-repeat 0px -1px/33px;
             border: none;
             padding-top: 4px;
             padding-left: 32px;
             text-align: center;
             font-size: 22px;
-            font-family:'LatoWebRegular';
+            font-family:'LatoWebMedium';
             height: 50px;
             width: 100%;
         }
@@ -201,9 +247,8 @@ h2, h3, h4, h5 {
         font-size: 13px;
         font-family: 'Comfortaa';
         border-top: 1px solid darken($theme, 4%);
-        margin-top: 15px;
-        padding-top: 12px;
-        padding-bottom: 5px;
+        margin-top: 10px;
+        padding-top: 18px;
         a {
             color: #fff;
         }
