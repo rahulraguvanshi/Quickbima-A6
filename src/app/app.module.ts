@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -25,8 +28,20 @@ import { HomeContentComponent } from './home-content/home-content.component';
 import { CarQuotesComponent } from './car-quotes/car-quotes.component';
 import { HealthQuotesComponent } from './health-quotes/health-quotes.component';
 
+
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, NgSelectModule, routing ],
+  imports:      [ 
+    BrowserModule, 
+    BrowserAnimationsModule, 
+    FormsModule, 
+    ReactiveFormsModule, 
+    NgSelectModule, 
+    
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
+    routing
+  ],
   declarations: [ 
     AppComponent,
     HelloComponent,

@@ -14,7 +14,7 @@
             </div>
             <div class="row fields-row">
                 <div class="col-sm-4">
-                        <ng-select [items]="carMakeModel" placeholder="Make and Model"></ng-select>
+                    <ng-select [items]="carMakeModel" placeholder="Make and Model"></ng-select>
                 </div>
                 <div class="col-sm-2">
                     <ng-select [items]="fuelType" placeholder="Fuel Type"></ng-select>
@@ -23,7 +23,11 @@
                     <ng-select [items]="carVariant" placeholder="Variant"></ng-select>
                 </div>
                 <div class="col-sm-2">
-                    
+                    <div class="input-effect">
+                        <input [attr.value]="tx_date | date: 'yyyy-MM-dd'" [min]="min" [max]="max" class="effect form-control" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+                        <owl-date-time [pickerType]="'calendar'" #dt></owl-date-time>
+                        <label>Registration Date</label>
+                    </div>
                 </div>
             </div>
             <button class="btn continue-btn">Continue</button>

@@ -10,6 +10,12 @@ import * as $ from 'jquery';
 })
 export class CarFormComponent implements OnInit {
 
+  // Min moment: April 12 2018, 10:30
+  public min = new Date(2018, 3, 12, 10, 30);
+
+  // Max moment: April 25 2018, 20:30
+  public max = new Date(2018, 3, 25, 20, 30);
+
   constructor(private carFormBuilder: FormBuilder) {
   }
 
