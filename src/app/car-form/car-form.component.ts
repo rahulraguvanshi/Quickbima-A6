@@ -12,21 +12,20 @@ export class CarFormComponent implements OnInit {
 
   // Min moment: April 12 2018, 10:30
   public min = new Date(2018, 3, 12, 10, 30);
-
   // Max moment: April 25 2018, 20:30
   public max = new Date(2018, 3, 25, 20, 30);
 
   constructor(private carFormBuilder: FormBuilder) {
   }
 
-  carMakeModel = [
-    "Maruti Suzuki 800",
-    "Maruti Suzuki Alto",
-    "Maruti Suzuki Alto 800",
-    "Maruti Suzuki Alto K10",
-    "Maruti Suzuki Alto Swift",
-    "Maruti Suzuki Alto Swift Dzire"
-  ]
+  public carMakeModel:Array<string> = [
+    'Maruti Suzuki 800', 
+    'Maruti Suzuki Alto', 
+    'Maruti Suzuki Alto 800', 
+    'Maruti Suzuki Alto K10', 
+    'Maruti Suzuki Swift',
+    'Maruti Suzuki Swift Dzire'
+  ];
 
   fuelType = [
     "Petrol", 
@@ -43,7 +42,7 @@ export class CarFormComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       pincode: ['', [Validators.required, Validators.minLength(6)]],
       mobile: ['', [Validators.required, Validators.minLength(10)]],
-      age: ['', Validators.required]
+      age: ['', Validators.required],
   });
 
     $(".input-effect input").focusout(function(){

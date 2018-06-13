@@ -18,7 +18,7 @@ export class HealthFormComponent implements OnInit {
     this.healthAge = Array.from({length: 83}, (value, key) => key).map(i => i + 18 + ' years');
   }
   eldestGender = [
-    "Male", 
+    "Male",
     "Female"
   ];
 
